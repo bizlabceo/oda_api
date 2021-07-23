@@ -6,7 +6,13 @@ export default gql`
     userName: String!
     email: String!
     password: String!
-    phoneNumber:String!
+    phoneNumber: String!
+    member_Classification: String
+    business_Number: String
+    business_Type: String
+    membership_Grade: String
+    member_Role: String
+    avatar: String
     createdAt: String!
     updatedAt: String!
   }

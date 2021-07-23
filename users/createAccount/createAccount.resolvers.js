@@ -4,7 +4,10 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    createAccount: async (_, { userName, email, password, phoneNumber }) => {
+    createAccount: async (
+      _,
+      { userName, email, password, phoneNumber, member_Classification }
+    ) => {
       try {
         const existingUser = await client.user.findFirst({
           where: {
@@ -33,8 +36,12 @@ export default {
             email,
             phoneNumber,
             password: hashPassword,
+            member_Classification,
           },
         });
+        return {
+          ok: true,
+        };
       } catch (e) {
         return {
           ok: false,

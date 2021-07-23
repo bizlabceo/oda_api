@@ -10,7 +10,8 @@ export default gql`
       userName: String!
       email: String!
       password: String!
-      phoneNumber:String!
+      phoneNumber: String!
+      member_Classification: String
     ): CreateAccountResult!
   }
 `;
